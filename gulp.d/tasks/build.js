@@ -99,7 +99,8 @@ module.exports = (src, dest, preview) => () => {
     vfs.src('helpers/*.js', opts),
     vfs.src('layouts/*.hbs', opts),
     vfs.src('partials/*.hbs', opts),
-    vfs.src('static/**/*[!~]', { ...opts, base: ospath.join(src, 'static'), dot: true })
+    vfs.src('static/**/*[!~]', { ...opts, base: ospath.join(src, 'static'), dot: true }),
+    vfs.src('img/favicon/site.webmanifest', opts)
   ).pipe(vfs.dest(dest, { sourcemaps: sourcemaps && '.' }))
 }
 

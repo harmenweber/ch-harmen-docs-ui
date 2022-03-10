@@ -23,22 +23,28 @@
   --body-font-size--desktop: 1.125em; /* 18px */
   --body-font-size--print: 0.9375em; /* 15px */
   --body-line-height: 1.15;
-  --body-font-color: var(--color-jet-70);
+  /* --body-font-color: var(--color-jet-70); */
+  --body-font-color: var(--nord0);
   --body-font-family: "Roboto", sans-serif;
   --body-font-weight-bold: 500;
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 500;
   /* base */
   --body-background: var(--color-white);
-  --panel-background: var(--color-smoke-30);
-  --panel-border-color: var(--color-smoke-90);
+  /* --panel-background: var(--color-smoke-30); */
+  --panel-background: var(--nord6);
+  /* --panel-border-color: var(--color-smoke-90); */
+  --panel-border-color: var(--nord4);
   --scrollbar-track-color: var(--color-smoke-30);
-  --scrollbar-thumb-color: var(--color-gray-10);
+  /* --scrollbar-thumb-color: var(--color-gray-10); */
+  --scrollbar-thumb-color: var(--nord4);
   --scrollbar_hover-thumb-color: var(--color-gray-30);
   /* navbar */
-  --navbar-background: var(--color-jet-80);
+  /* --navbar-background: var(--color-jet-80); */
+  --navbar-background: var(--nord0);
   --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
+  /* --navbar_hover-background: var(--color-black); */
+  --navbar_hover-background: var(--nord1);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
@@ -48,43 +54,60 @@
   --navbar-menu_hover-background: var(--color-smoke-50);
   /* nav */
   --nav-background: var(--panel-background);
-  --nav-border-color: var(--color-gray-10);
+  --nav-border-color: var(--panel-border-color);
   --nav-line-height: 1.35;
-  --nav-heading-font-color: var(--color-jet-30);
-  --nav-muted-color: var(--color-gray-70);
-  --nav-panel-divider-color: var(--color-smoke-90);
-  --nav-secondary-background: var(--color-smoke-70);
+  /* --nav-heading-font-color: var(--color-jet-30); */
+  --nav-heading-font-color: var(--nord1);
+  /* --nav-muted-color: var(--color-gray-70); */
+  --nav-muted-color: var(--nord3);
+  /* --nav-panel-divider-color: var(--color-smoke-90); */
+  --nav-panel-divider-color: var(--panel-border-color);
+  /* --nav-secondary-background: var(--color-smoke-70); */
+  --nav-secondary-background: var(--nord6);
   /* toolbar */
   --toolbar-background: var(--panel-background);
   --toolbar-border-color: var(--panel-border-color);
-  --toolbar-font-color: var(--color-gray-70);
-  --toolbar-muted-color: var(--color-gray-40);
-  --page-version-menu-background: var(--color-smoke-70);
-  --page-version-missing-font-color: var(--color-gray-40);
+  /* --toolbar-font-color: var(--color-gray-70); */
+  --toolbar-font-color: var(--nord2);
+  /* --toolbar-muted-color: var(--color-gray-30); */
+  --toolbar-muted-color: var(--nord3);
+  /* --page-version-menu-background: var(--color-smoke-70); */
+  --page-version-menu-background: var(--nord4);
+  /* --page-version-missing-font-color: var(--color-gray-30); */
+  --page-version-missing-font-color: var(--nord3);
   /* admonitions */
-  --caution-color: #a0439c;
+  /* --caution-color: #a0439c; */
+  --caution-color: var(--nord15);
   --caution-on-color: var(--color-white);
-  --important-color: #d32f2f;
+  /* --important-color: #d32f2f; */
+  --important-color: var(--nord11);
   --important-on-color: var(--color-white);
-  --note-color: #217ee7;
+  /* --note-color: #217ee7; */
+  --note-color: var(--nord10);
   --note-on-color: var(--color-white);
-  --tip-color: #41af46;
+  /* --tip-color: #41af46; */
+  --tip-color: var(--nord14);
   --tip-on-color: var(--color-white);
-  --warning-color: #e18114;
+  /* --warning-color: #e18114; */
+  --warning-color: var(--nord12);
   --warning-on-color: var(--color-white);
   /* doc */
-  --doc-font-color: var(--color-jet-50);
+  /* --doc-font-color: var(--color-jet-50); */
+  --doc-font-color: var(--body-font-color);
   --doc-font-size: inherit;
   --doc-font-size--desktop: calc(17 / var(--rem-base) * 1rem);
   --doc-line-height: 1.6;
   --doc-margin: 0 auto;
   --doc-margin--desktop: 0 2rem;
-  --heading-font-color: var(--color-jet-80);
+  /* --heading-font-color: var(--color-jet-80); */
+  --heading-font-color: var(--body-font-color);
   --heading-font-weight: normal;
   --alt-heading-font-weight: var(--body-font-weight-bold);
   --section-divider-color: var(--panel-border-color);
-  --link-font-color: #1565c0;
-  --link_hover-font-color: #104d92;
+  /* --link-font-color: #1565c0; */
+  --link-font-color: var(--nord10);
+  /* --link_hover-font-color: #104d92; */
+  --link_hover-font-color: var(--nord9);
   --link_unresolved-font-color: var(--important-color);
   --abstract-background: var(--color-smoke-70);
   --abstract-font-color: var(--color-jet-20);
@@ -107,7 +130,8 @@
   --quote-border-color: var(--color-gray-70);
   --quote-font-color: var(--color-gray-70);
   --quote-attribution-font-color: var(--color-gray-40);
-  --sidebar-background: var(--color-smoke-90);
+  /* --sidebar-background: var(--color-smoke-90); */
+  --sidebar-background: var(--nord4);
   --table-border-color: var(--panel-border-color);
   --table-stripe-background: var(--panel-background);
   --table-footer-background: linear-gradient(to bottom, var(--color-smoke-70) 0%, var(--color-white) 100%);
@@ -118,9 +142,12 @@
   --toc-line-height: 1.2;
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
-  --footer-link-font-color: var(--color-jet-80);
+  /* --footer-background: var(--color-smoke-90); */
+  --footer-background: var(--nord6);
+  /* --footer-font-color: var(--color-gray-70); */
+  --footer-font-color: var(--nord3);
+  /* --footer-link-font-color: var(--color-jet-80); */
+  --footer-link-font-color: var(--nord0);
   /* dimensions and positioning */
   --navbar-height: calc(63 / var(--rem-base) * 1rem);
   --toolbar-height: calc(45 / var(--rem-base) * 1rem);
