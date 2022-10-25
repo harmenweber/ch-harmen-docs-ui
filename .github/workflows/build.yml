@@ -8,9 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - uses: actions/checkout@v2
@@ -26,22 +27,14 @@ jobs:
         npm ci
         npx gulp bundle
 
-    - name: Deploy
-      uses: Reggionick/s3-deploy@v3.1.1
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        # Directory to deploy
-        folder: build
-        # Name of AWS Bucket
-        bucket: ${{ secrets.S3_BUCKET }}
-        # The destination bucket region
-        bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-        # AWS CloudFront distribution ID
-        dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-        # AWS CloudFront invalidation path(s)
-        invalidation: /*
-        # Removes files in S3 that are not available in the local copy of the directory
-        delete-removed: true
-        # Use this parameter to specify Cache-Control: no-cache, no-store, must-revalidate header
-        no-cache: true
-        # Upload files with private ACL, needed for S3 static website hosting
-        private: true
+        role-to-assume: arn:aws:iam::497147078732:role/ch-harmen-docs-deployer
+        aws-region: eu-central-1
+
+    - name: Deploy to S3
+      run: aws s3 sync build s3://${{ secrets.S3_BUCKET }} --delete
+
+    - name: Invalidate CloudFront distribution
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
