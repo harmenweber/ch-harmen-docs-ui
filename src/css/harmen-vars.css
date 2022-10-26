@@ -1,0 +1,7 @@
+:root {
+  /* The following colors bridge the gap between nord3 and nord4. */
+  /* See https://meyerweb.com/eric/tools/color-blend/#4C566A:D8DEE9:5:hex */
+  --harmen-nord3-dot25: #6f788a;
+  --harmen-nord3-dot50: #929aaa;
+  --harmen-nord3-dot75: #b5bcc9;
+}
